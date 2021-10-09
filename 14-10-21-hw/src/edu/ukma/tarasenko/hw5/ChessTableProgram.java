@@ -6,13 +6,13 @@ import acm.program.*;
 import java.awt.*;
 
 public class ChessTableProgram extends GraphicsProgram {
-  private final int RECT_SIZE = 50;
+  private final int RECT_SIZE = 30;
   private final int TABLE_WIDTH = 8;
   private final int TABLE_HEIGHT = 8;
 
-  private Dimension getWindowSize() {
-    int windowWidth = RECT_SIZE * TABLE_WIDTH + 100;
-    int windowHeight = RECT_SIZE * TABLE_HEIGHT + 100;
+  private Dimension calculateWindowSize() {
+    int windowWidth = (RECT_SIZE + 3) * TABLE_WIDTH;
+    int windowHeight = (RECT_SIZE + 8) * TABLE_HEIGHT;
     return new Dimension(windowWidth, windowHeight);
   }
 
@@ -43,10 +43,8 @@ public class ChessTableProgram extends GraphicsProgram {
   }
 
   public void run() {
-    //Set window size according to the size of chess table
-    setSize(getWindowSize());
+    setSize(calculateWindowSize());
 
-    //Render chess table
     renderTable();
   }
 }
