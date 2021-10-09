@@ -16,6 +16,12 @@ public class ChessTableProgram extends GraphicsProgram {
     return new Dimension(windowWidth, windowHeight);
   }
 
+  private Color getRectColor(int x, int y) {
+    if(((TABLE_WIDTH * y) + x + y) % 2 == 0)
+      return Color.WHITE;
+    return Color.BLACK;
+  }
+
   private void renderTable() {
     for(int xIterator = 0; xIterator < TABLE_WIDTH; xIterator++) {
       for(int yIterator = 0; yIterator < TABLE_HEIGHT; yIterator++) {
@@ -23,16 +29,9 @@ public class ChessTableProgram extends GraphicsProgram {
         int yPosition = yIterator * RECT_SIZE;
 
         GRect rect = new GRect(xPosition, yPosition, RECT_SIZE, RECT_SIZE);
-        Color rectColor;
-
         rect.setFilled(true);
 
-        if(((TABLE_WIDTH * yIterator) + xIterator + yIterator) % 2 == 0)
-          rectColor = Color.WHITE;
-        else
-          rectColor = Color.BLACK;
-
-        rect.setFillColor(rectColor);
+        rect.setFillColor(getRectColor(xIterator, yIterator));
         add(rect);
       }
     }
