@@ -22,17 +22,22 @@ public class ChessTableProgram extends GraphicsProgram {
     return Color.BLACK;
   }
 
+  private GRect createRect(int x, int y) {
+    int xPosition = x * RECT_SIZE;
+    int yPosition = y * RECT_SIZE;
+
+    GRect rect = new GRect(xPosition, yPosition, RECT_SIZE, RECT_SIZE);
+    rect.setFillColor(getRectColor(x, y));
+    rect.setFilled(true);
+
+    return rect;
+  }
+
   private void renderTable() {
-    for(int xIterator = 0; xIterator < TABLE_WIDTH; xIterator++) {
-      for(int yIterator = 0; yIterator < TABLE_HEIGHT; yIterator++) {
-        int xPosition = xIterator * RECT_SIZE;
-        int yPosition = yIterator * RECT_SIZE;
-
-        GRect rect = new GRect(xPosition, yPosition, RECT_SIZE, RECT_SIZE);
-        rect.setFilled(true);
-
-        rect.setFillColor(getRectColor(xIterator, yIterator));
-        add(rect);
+    for(int x = 0; x < TABLE_WIDTH; x++) {
+      for(int y = 0; y < TABLE_HEIGHT; y++) {
+        GRect newRect = createRect(x, y);
+        add(newRect);
       }
     }
   }
