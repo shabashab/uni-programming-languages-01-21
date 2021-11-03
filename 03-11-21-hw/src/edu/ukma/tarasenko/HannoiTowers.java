@@ -12,12 +12,14 @@ class Needle extends Stack<Integer> {
 public class HannoiTowers {
   public static void printNeedles(Needle[] needles) {
     StringBuilder builder = new StringBuilder();
+
     for (int i = 0; i < needles.length; i++) {
       Needle needle = needles[i];
       builder.append(i + 1).append(": ");
       needle.forEach((value) -> builder.append(value).append(" "));
       builder.append("\n");
     }
+
     String output = builder.toString();
     System.out.println(output);
   }
@@ -64,6 +66,11 @@ public class HannoiTowers {
 
     System.out.print("Enter the needed needle number (2 or 3): ");
     int neededNeedle = scanner.nextInt();
+
+    if(neededNeedle > 3 || neededNeedle < 2) {
+      System.out.println("Invalid input!");
+      return;
+    }
 
     Needle[] needles = new Needle[] {
       new Needle(),
