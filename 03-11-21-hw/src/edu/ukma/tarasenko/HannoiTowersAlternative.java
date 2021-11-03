@@ -5,18 +5,6 @@ import java.util.Scanner;
 public class HannoiTowersAlternative {
   private static long actionsCount = 0;
 
-  private static void printNeedles(Needle[] needles) {
-    StringBuilder builder = new StringBuilder();
-    for (int i = 0; i < needles.length; i++) {
-      Needle needle = needles[i];
-      builder.append(i + 1).append(": ");
-      needle.forEach((value) -> builder.append(value).append(" "));
-      builder.append("\n");
-    }
-    String output = builder.toString();
-    System.out.println(output);
-  }
-
   private static void moveRings(Needle[] needles, int to, int count) {
     if(count == 0)
       return;
@@ -26,7 +14,7 @@ public class HannoiTowersAlternative {
 
     while(needles[to].size() != count) {
       tryMoveRing(needles, count, to, count);
-      printNeedles(needles);
+      HannoiTowers.printNeedles(needles);
       actionsCount++;
     }
   }
@@ -73,9 +61,9 @@ public class HannoiTowersAlternative {
       needles[0].push(count - i);
     }
 
-    printNeedles(needles);
+    HannoiTowers.printNeedles(needles);
     moveRings(needles, neededNeedle - 1, count);
-    printNeedles(needles);
+    HannoiTowers.printNeedles(needles);
     System.out.println(actionsCount);
   }
 }
