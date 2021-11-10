@@ -5,17 +5,20 @@ import java.util.Scanner;
 import java.util.stream.IntStream;
 
 public class MinMax {
+  static final String stopKeyword = "0";
+
   public static int[] input() {
     Scanner scanner = new Scanner(System.in);
     ArrayList<Integer> result = new ArrayList<>();
 
     while (true) {
       System.out.print("? ");
-      int value = scanner.nextInt();
+      String inputValue = scanner.nextLine();
 
-      if (value == 0)
+      if(stopKeyword.equals(inputValue))
         break;
 
+      int value = Integer.parseInt(inputValue);
       result.add(value);
     }
 
