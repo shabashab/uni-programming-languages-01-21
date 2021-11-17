@@ -13,7 +13,7 @@ public class GuessTheNumber {
     int number = ThreadLocalRandom.current().nextInt(MIN_NUMBER, MAX_NUMBER);
     System.out.printf("Я вибрав число між %d та %d\n", MIN_NUMBER, MAX_NUMBER);
 
-    while(true) {
+    for(;;) {
       System.out.print("Ваш варіант: ");
       int input = scanner.nextInt();
 
