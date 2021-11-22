@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/03-11-21-hw/03-11-21-hw.iml" filepath="$PROJECT_DIR$/03-11-21-hw/03-11-21-hw.iml" />
+      <module fileurl="file://$PROJECT_DIR$/07-10-21-hw/07-10-21-hw.iml" filepath="$PROJECT_DIR$/07-10-21-hw/07-10-21-hw.iml" />
+      <module fileurl="file://$PROJECT_DIR$/11-11-21-hw/11-11-21-hw.iml" filepath="$PROJECT_DIR$/11-11-21-hw/11-11-21-hw.iml" />
+      <module fileurl="file://$PROJECT_DIR$/14-10-21-hw/14-10-21-hw.iml" filepath="$PROJECT_DIR$/14-10-21-hw/14-10-21-hw.iml" />
+      <module fileurl="file://$PROJECT_DIR$/16-09-21/16-09-21.iml" filepath="$PROJECT_DIR$/16-09-21/16-09-21.iml" />
+      <module fileurl="file://$PROJECT_DIR$/16-09-21-hw/16-09-21-hw.iml" filepath="$PROJECT_DIR$/16-09-21-hw/16-09-21-hw.iml" />
+      <module fileurl="file://$PROJECT_DIR$/18-12-21-hw/18-12-21-hw.iml" filepath="$PROJECT_DIR$/18-12-21-hw/18-12-21-hw.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/programming-languages.iml" filepath="$PROJECT_DIR$/.idea/programming-languages.iml" />
+    </modules>
+  </component>
+</project>

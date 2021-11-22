@@ -17,6 +17,7 @@ public class Pythagorean {
 
     System.out.print("b: ");
     b = scanner.nextInt();
+
     if(b <= 0)
       throw new IllegalArgumentException("Invalid input data. b should be more than 0");
 
