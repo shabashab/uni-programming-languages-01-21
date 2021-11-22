@@ -19,7 +19,7 @@ public class TestRunner {
     boolean result = true;
 
     for (Test test : tests) {
-      System.out.printf("Running test for function \"%s\"...", test.functionName);
+      System.out.printf("Running test for function \"%s\"... ", test.functionName);
 
       boolean isPassed = test.function.executeTest();
       System.out.println(isPassed ? "PASSED!" : "FAILED!");
@@ -48,6 +48,7 @@ public class TestRunner {
             new Test("testPrintName10Times", testSuite::testCheckPrimeNumber),
     };
 
-    runner.executeTests(tests);
+    boolean result = runner.executeTests(tests);
+    System.out.println(result ? "All tests passed! Congratulations!" : "One or more tests failed. ;(");
   }
 }

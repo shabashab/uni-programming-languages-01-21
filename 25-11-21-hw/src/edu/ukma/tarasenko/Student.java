@@ -42,7 +42,7 @@ public class Student {
 
   int sumFirstN(int n) {
     int sum = 0;
-    while((--n) != 0) {
+    while((n--) != 0) {
       sum += (n + 1);
     }
     return sum;
@@ -50,7 +50,7 @@ public class Student {
 
   int sumFirstNOdd(int n) {
     int sum = 0;
-    while((--n) != 0) {
+    while((n--) != 0) {
       sum += ((n + 1) * 2) - 1;
     }
     return sum;
@@ -70,7 +70,7 @@ public class Student {
 
   void print10PowersOfTwo(PrintStream outputStream) {
     for(int i = 0; i <= 10; i++) {
-      outputStream.printf("2^%d = %d", i, (int)Math.pow(2, i));
+      outputStream.printf("2^%d = %d\n", i, (int)Math.pow(2, i));
     }
   }
 

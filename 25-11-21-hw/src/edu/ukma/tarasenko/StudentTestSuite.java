@@ -92,7 +92,7 @@ public class StudentTestSuite {
 
   public boolean testSumFirstDividors() {
     Student student = createStudent();
-    float[] expectedResults = new float[]{0f, 1.5f, 1.8333333f};
+    float[] expectedResults = new float[]{0f, 1f, 1f + (1 / 2f), 1f + (1 / 2f) + (1 / 3f)};
 
     for(int i = 0; i < expectedResults.length; i++)
       if(student.sumFirstDividors(i) != expectedResults[i])
@@ -166,7 +166,7 @@ public class StudentTestSuite {
       int numValue;
 
       try {
-        numValue = Integer.parseInt(regexMatcher.group(1));
+        numValue = Integer.parseInt(regexMatcher.group(2));
       } catch (Exception e) {
         throw new IllegalArgumentException("Invalid input string");
       }
@@ -183,7 +183,7 @@ public class StudentTestSuite {
 
     if(regexMatcher.find()) {
       try {
-        return Float.parseFloat(regexMatcher.group(0));
+        return Float.parseFloat(regexMatcher.group(1));
       } catch (Exception e) {
         throw new IllegalArgumentException("Invalid input string. Can't parse a number");
       }
