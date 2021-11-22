@@ -3,6 +3,7 @@ package edu.ukma.tarasenko;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        Student student = new Student("Artem", "Tarasenko");
+        student.printSquareFunctionValues();
     }
 }
