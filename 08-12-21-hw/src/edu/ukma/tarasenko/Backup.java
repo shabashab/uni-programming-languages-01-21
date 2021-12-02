@@ -7,6 +7,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Backup {
+  private static void fatalError(String message) {
+    System.out.printf("ERROR: %s\n", message);
+    System.exit(1);
+  }
+
   private static String replaceLast(String input, String toReplace, String replacement) {
     return input.replaceFirst("(" + toReplace + ")$", replacement);
   }
@@ -54,27 +59,11 @@ public class Backup {
 
     File inputFile = new File(fileName);
 
-    if(!inputFile.exists()) {
-      System.out.println("ERROR: Input file does not exist");
-      System.exit(1);
-    }
-
-    if(!inputFile.canRead()) {
-      System.out.println("ERROR: Input file does not exist");
-      System.exit(1);
-    }
-
-    if(!inputFile.exists()) {
-      System.out.println("ERROR: Input file does not exist");
-      System.exit(1);
-    }
-
     String outputFilePath = "";
     try {
       outputFilePath = createOutputFilePath(fileName);
     } catch (BadStringOperationException exception) {
-      System.out.println("ERROR: Input file format is incorrect");
-      System.exit(1);
+      fatalError(exception.getMessage());
     }
 
     File outputFile = new File(outputFilePath);
@@ -82,7 +71,7 @@ public class Backup {
     try {
       copyFile(inputFile, outputFile);
     } catch (IOException exception) {
-      System.out.println("ERROR: error when trying to copy a file");
+      fatalError("An error occurred when trying to copy a file");
     }
   }
 }

@@ -3,28 +3,27 @@ package edu.ukma.tarasenko;
 import java.io.*;
 import java.util.Scanner;
 
-class FileSubstringReplacer {
-  private void writeToFile(File file, String data) throws IOException {
+public class ReplaceSubstring {
+
+  private static void writeToFile(File file, String data) throws IOException {
     BufferedWriter writer = new BufferedWriter(new FileWriter(file));
     writer.write(data);
     writer.close();
   }
 
-  public void replaceSubstring(File file, String substring, String replacement) throws IOException {
+  private static void replaceSubstring(File file, String substring, String replacement) throws IOException {
     Scanner scanner = new Scanner(file);
     StringBuilder outputStringBuilder = new StringBuilder();
 
-    while(scanner.hasNextLine()) {
+    while (scanner.hasNextLine()) {
       String line = scanner.nextLine();
-      outputStringBuilder.append(line.replaceAll(substring, replacement)).append('\n');
+      String formattedLine = line.replaceAll(substring, replacement);
+      outputStringBuilder.append(formattedLine).append('\n');
     }
 
     String outputString = outputStringBuilder.toString();
     writeToFile(file, outputString);
   }
-}
-
-public class ReplaceSubstring {
 
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -40,24 +39,8 @@ public class ReplaceSubstring {
 
     File inputFile = new File(inputFileName);
 
-    if(!inputFile.exists()) {
-      System.out.println("ERROR: Input file does not exist!");
-      System.exit(1);
-    }
-
-    if(!inputFile.canRead()) {
-      System.out.println("ERROR: Input file is not readable!");
-      System.exit(1);
-    }
-
-    if(!inputFile.canWrite()) {
-      System.out.println("ERROR: Input file is not writable!");
-      System.exit(1);
-    }
-
-    FileSubstringReplacer replacer = new FileSubstringReplacer();
     try {
-      replacer.replaceSubstring(inputFile, substring, replacement);
+      replaceSubstring(inputFile, substring, replacement);
     } catch (IOException e) {
       System.out.printf("ERROR: %s\n", e.getMessage());
       System.exit(1);
