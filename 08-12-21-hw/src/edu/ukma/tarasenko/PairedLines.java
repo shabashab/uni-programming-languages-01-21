@@ -1,20 +1,13 @@
 package edu.ukma.tarasenko;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
 public class PairedLines {
-
   private static final String ODD_LINES_FILE_NAME = "oddLines.txt";
   private static final String EVEN_LINES_FILE_NAME = "evenLines.txt";
-
-  private static void fatalError(String message) {
-    System.out.printf("ERROR: %s\n", message);
-    System.exit(1);
-  }
 
   public static void createFiles(File inputFile, File evenLinesFile, File oddLinesFile) throws IOException {
     Scanner inputFileScanner = new Scanner(inputFile);
@@ -44,7 +37,8 @@ public class PairedLines {
     try {
       createFiles(inputFile, evenLinesFile, oddLinesFile);
     } catch (IOException e) {
-      fatalError(e.getMessage());
+      System.out.printf("ERROR: %s\n", e.getMessage());
+      System.exit(1);
     }
   }
 }
