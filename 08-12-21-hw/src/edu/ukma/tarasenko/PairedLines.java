@@ -13,15 +13,18 @@ public class PairedLines {
     Scanner inputFileScanner = new Scanner(inputFile);
 
     FileWriter evenLinesFileWriter = new FileWriter(evenLinesFile);
-    FileWriter oddLinesFileWriter = new FileWriter(evenLinesFile);
+    FileWriter oddLinesFileWriter = new FileWriter(oddLinesFile);
 
     for(long i = 0; inputFileScanner.hasNextLine(); i++) {
       String line = inputFileScanner.nextLine();
 
-      if(i % 2 == 0)
-        evenLinesFileWriter.write(line);
-      else oddLinesFileWriter.write(line);
+      if((i + 1) % 2 == 0)
+        evenLinesFileWriter.write(line + "\n");
+      else oddLinesFileWriter.write(line + "\n");
     }
+
+    evenLinesFileWriter.close();
+    oddLinesFileWriter.close();
   }
 
   public static void main(String[] args) {
@@ -31,6 +34,7 @@ public class PairedLines {
     String inputFileName = scanner.nextLine();
 
     File inputFile = new File(inputFileName);
+
     File oddLinesFile = new File(ODD_LINES_FILE_NAME);
     File evenLinesFile = new File(EVEN_LINES_FILE_NAME);
 
