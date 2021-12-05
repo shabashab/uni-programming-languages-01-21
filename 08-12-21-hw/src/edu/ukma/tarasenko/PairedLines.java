@@ -15,10 +15,10 @@ public class PairedLines {
     FileWriter evenLinesFileWriter = new FileWriter(evenLinesFile);
     FileWriter oddLinesFileWriter = new FileWriter(oddLinesFile);
 
-    for(long i = 0; inputFileScanner.hasNextLine(); i++) {
+    for (long i = 0; inputFileScanner.hasNextLine(); i++) {
       String line = inputFileScanner.nextLine();
 
-      if((i + 1) % 2 == 0)
+      if ((i + 1) % 2 == 0)
         evenLinesFileWriter.write(line + "\n");
       else oddLinesFileWriter.write(line + "\n");
     }

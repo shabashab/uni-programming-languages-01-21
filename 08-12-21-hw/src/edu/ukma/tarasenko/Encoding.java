@@ -7,8 +7,8 @@ public class Encoding {
   private static String encodeString(String input, int shift) {
     StringBuilder outputStringBuilder = new StringBuilder();
 
-    for(int i = 0; i < input.length(); i++) {
-      outputStringBuilder.append((char)(input.charAt(i) + shift));
+    for (int i = 0; i < input.length(); i++) {
+      outputStringBuilder.append((char) (input.charAt(i) + shift));
     }
 
     return outputStringBuilder.toString();
@@ -24,7 +24,7 @@ public class Encoding {
     Scanner fileScanner = new Scanner(fileToEncode);
     StringBuilder outputBuilder = new StringBuilder();
 
-    while(fileScanner.hasNextLine())  {
+    while (fileScanner.hasNextLine()) {
       String line = fileScanner.nextLine();
       String encodedLine = encodeString(line, shift);
       outputBuilder.append(encodedLine).append("\n");
