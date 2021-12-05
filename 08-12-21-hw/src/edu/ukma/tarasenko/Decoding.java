@@ -16,8 +16,8 @@ public class Decoding {
   private static String decodeString(String input, int shift) {
     StringBuilder outputBuilder = new StringBuilder();
 
-    for(int i = 0; i < input.length(); i++) {
-      outputBuilder.append(input.charAt(i) - shift);
+    for (int i = 0; i < input.length(); i++) {
+      outputBuilder.append((char) (input.charAt(i) - shift));
     }
 
     return outputBuilder.toString();
@@ -27,10 +27,10 @@ public class Decoding {
     Scanner fileScanner = new Scanner(file);
     StringBuilder outputBuilder = new StringBuilder();
 
-    while(fileScanner.hasNextLine())  {
+    while (fileScanner.hasNextLine()) {
       String line = fileScanner.nextLine();
       String encodedLine = decodeString(line, shift);
-      outputBuilder.append(encodedLine);
+      outputBuilder.append(encodedLine).append("\n");
     }
 
     String output = outputBuilder.toString();
